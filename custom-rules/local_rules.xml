@@ -1,0 +1,12 @@
+<group name="local,syslog,">
+  <!-- Regla Personalizada: Detección de comandos codificados en Base64 -->
+  <rule id="100002" level="10">
+    <if_group>syslog</if_group>
+    <match>base64 -d|base64 --decode</match>
+    <description>SOC Alert: Detectada ejecucion de comando decodificado en Base64 (MITRE T1027 / T1059)</description>
+    <mitre>
+      <id>T1027</id>
+      <id>T1059</id>
+    </mitre>
+  </rule>
+</group>
