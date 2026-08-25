@@ -1,23 +1,37 @@
-<div align="center">
+ï»¿# Cloud SOC Lab: Wazuh SIEM & Detection Engineering
 
-# ðŸ›¡Ï½ Cloud SOC Lab: Wazuh SIEM & Detection Engineering
+Laboratorio defensivo (Blue Team) desplegado en un servidor VPS en la nube (Ubuntu 22.04 LTS) enfocado en telemetria en tiempo real, ingenieria de deteccion bajo la matriz **MITRE ATT&CK** y gestion de incidentes.
 
-[<img src="https://img.shields.io/badge/Wazuh-v4.8.0-blue?style=for-the-badge&logo=wazuh&logoColor=white" alt="Wazuh"> 
-[<img src="https://img.shields.io/badge/MITRE_ATT%26CK-v14-red?style=for-the-badge" alt="MITRE"> 
-[<img src=(šÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÑØÚÙ\‹S][KKPÛÛZ[™\‹LM‘QÜÝ[OY›Ü‹]KX˜YÙI›ÙÛÏYØÚÙ\‰›ÙÛÐÛÛÜ]Ú]Hˆ[H‘ØÚÙ\ˆˆ–Ï[YÈÜ˜ÏHšÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÕX[WÔÙ\™\‹LŒ‹ŒÓËQNMMŒÜÝ[OY›Ü‹]KX˜YÙI›ÙÛÏ]X[I›ÙÛÐÛÛÜ]Ú]Hˆ[H•X[H‚‚[YÛH˜Ù[\ˆ‚ˆ“X›Ü˜]Üš[ÈY™[œÚ]›È
-›YHX[JH[ˆ[Ü››ÈÛÝY\˜H[Ûš]Üš^˜XÚpìÛˆÛÛ[XK[[Y]°ëXH[ˆY[\È™X[[™Ù[šY\°ëXHH]XØÚpìÛˆHÙ\ÝpìÛˆH[˜ÚY[\ËØ‚Ü‚Ù]‚‚‹KKB‚ˆÈÈ<'äãÈKˆ\œ]Z]XÝ\˜H[Ú\Ý[XBŠˆ
-Š”ÒQSHÈŽŠŠˆØ^ZŽŒ
-ÝXÚÈØÚÙ\ˆÜ[Z^˜YÈH‘Ðˆ•“R”ÂŠˆ
-Š•[[Y]°ëXNŠŠˆØ^ZYÙ[
-È’SH
-š[H[YÜš]H[Ûš]Üš[™ÊH[ˆY[\È™X[‚Šˆ
-Š’[™Ù[šY\°ëXHH]XØÚpìÛŽŠŠˆ™YÛ\ÈS\œÛÛ˜[^˜Y\ÈX\XY\ÈHRU‘HU	ÒË‚Šˆ
-ŠÛÛš]™[˜ÚXNŠŠˆÙ\šXÚ[ÈÙXˆ[ˆY\ÈÈHØ\œ]HZ\ÛYH\˜HYX˜\Ë‚‚‹KKB‚ˆÈÈ<'ãëÈ‹ˆ\ØÙ[˜\š[ÜÈH]XØÚpìÛˆ
-RU‘HU	ÒÊB‚ˆÈÈÈØ\ÛÈNˆ]XØÚpìÛˆHÙXˆÚ[È°ëXH’SH
-MLKŒÊBŠˆ
-‘\ØÜš\ÚpìÛŽŒH[Ûš]Ü™[Ù[ˆY[\È™X[ÛØœ™H\™XÝÜš[ÜÈÙX‹‚Šˆ
-”™\Ý[YÎŠØœ‚ˆVÑ’SH]XÝ[Û—JØÜËÙ]šY[˜ÙKYš[K]ÙXœÚ[œ™ÊB‚ŠŠŠ‚‚ˆÈÈÈØ\ÛÈŽˆ]˜\ÚpìÛˆÛÛˆ˜\ÙM
-LÈÈLNJBŠˆ
-‘\ØÜš\ÚpìÛŽŠØœ”™YÛH\œÛÛ˜[^˜YH
-QLŠH\˜H]XÝ\ˆZ™XÝXÚpìÛˆHÛÛX[™ÜÈXÛÙYšXØYÜË‚Šˆ
-”™\Ý[YÎŠØœ‚ˆVÓRU‘HLÈ[\JØÜËÙ]šY[˜ÙK[Z]™K]LËœ™ÊB‚‹KKB‚ˆÈÈ<'ä`ˆËˆ\ÝXÝ\˜H[™\ÜÚ]Üš[Â˜^›Z[šKXÛÝY\ÛØË[X‹Â¸¥ ‚·ŠRCŠR@I5¹µ€€€€€€€€€€€€€€€€€€€€€€€€€€€ŒA½ÉÑ…‘„ÁÉ¥¹¥Á…°ä•áÁ±¥…§Í¸+ŠR@ƒŠRsŠRCŠR@‘½Ì¼€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ŒÙ¥‘•¹¥…ÌË…™¥…Ì€¡…ÁÑÕÉ…Ì¤+Š*@ƒŠRsŠRCŠR@½¹™¥Ì¼€€€€€€€€€€€€€€€€€€€€€€€€€€ŒÉ¡¥Ù½Ì‘”½¹™¥ÕÉ…§Í¸‘•°…•¹Ñ”+ŠR@ â–sŠ’CŠR@ÕÍÑ½´µÉÕ±•Ì¼€€€€€€€€€€€€€€€€€€€€€ŒI•±…ÌaA0Á•ÉÍ½¹…±¥é…‘…Ì€¡I=€ÄÀÀÀÀÈ¤+Š*@ƒŠRsŠRCŠR@Á±…å‰½½­Ì¼€€€€€€€€€€€€€€€€€€€€€€€€ŒAÉ½•‘¥µ¥•¹Ñ½Ì‘”I•ÍÁÕ•ÍÑ„€¡M=@¤+Š*@ƒŠRCŠRCŠR@É•Á½ÉÑÌ¼€€€€€€€€€€€€€€€€€€€€€€€€€€Œ%¹™½Éµ•Ì™½Éµ…±•Ì‘”¥¹¥‘•¹Ñ•Ì)
+---
+
+## 1. Arquitectura del Sistema
+* **SIEM / XDR:** Wazuh v4.8.0 (Despliegue Docker optimizado con Heap de Java a 2 GB).
+* **Telemetria:** Agente Wazuh + File Integrity Monitoring (FIM) + Syslog.
+* **Aislamiento:** Panel web en puerto \8443\ y entorno web de pruebas aislado.
+
+---
+
+## 2. Escenarios de Deteccion Implementados
+
+### Caso 1: Deteccion de Web Shells via FIM (MITRE ATT&CK T1505.003)
+* **Mecanismo:** Modulo FIM en tiempo real sobre \/opt/mini-soc-lab/lab_web_test/\.
+* **Resultado:** Alerta instantanea (Regla 554, Nivel 5) con extraccion automatica de hash SHA-256.
+
+![FIM Detection](docs/evidence-fim-webshell.png)
+
+---
+
+### Caso 2: Deteccion de Evasion con Base64 (MITRE ATT&CK T1027 / T1059)
+* **Mecanismo:** Regla XML personalizada (\Rule 100002\, Nivel 10) para interceptar comandos decodificados en memoria.
+* **Resultado:** Deteccion de la ejecucion indexada en el panel de Threat Hunting.
+
+![MITRE T1027 Alert](docs/evidence-mitre-t1027.png)
+
+---
+
+## 3. Estructura del Repositorio
+* [\configs/\](configs/): Configuracion de telemetria y agente Wazuh.
+* [\custom-rules/\](custom-rules/): Reglas personalizadas de deteccion en formato XML.
+* [\playbooks/\](playbooks/): Procedimientos Estandar de Operacion (SOP) para analisis y contencion.
+* [\eports/\](reports/): Informes formales de incidentes formato SOC Tier 1.
+* [\docs/\](docs/): Evidencias visuales y capturas del SIEM.
