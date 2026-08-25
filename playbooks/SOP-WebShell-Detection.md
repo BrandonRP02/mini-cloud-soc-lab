@@ -1,24 +1,24 @@
-# Standard Operating Procedure (SOP): Detecci髇 y Respuesta a Web Shells
+# Standard Operating Procedure (SOP): Detecci贸n y Respuesta a Web Shells
 
-- **C骴igo:** SOP-SOC-001
+- j*Codigo:** SOP-SOC-001
 - **Rol:** Analista SOC Tier 1 / Tier 2
-- **T閏nica MITRE:** T1505.003 (Server Software Component: Web Shell)
+- **T茅cnica MITRE:** T1505.003 (Server Software Component: Web Shell)
 
 ---
 
-### 1. Detecci髇 y Triaje
-1. Revisar la alerta FIM en el SIEM (Rule ID `554` / `550`).
+### 1. Detecci贸n y Triaje
+1. Revisar la alerta FIM en el SIEM (Rule ID 554 / 550).
 2. Identificar la ruta completa del archivo modificado (`syscheck.path`) y el hash SHA-256.
-3. Consultar la reputaci髇 del hash en plataformas de Threat Intelligence (VirusTotal / AlienVault OTX).
+3. Consultar la reputaci贸n del hash en VirusTotal / AlienVault OTX.
 
-### 2. Contenci髇 Inmediata
-1. Desactivar permisos de ejecuci髇 para mitigar persistencia:
-   `chmod 000 /ruta/del/archivo/sospechoso.php`
-2. Verificar conexiones de red activas originadas por el proceso web:
-   `ss -tunap | grep -E ':80|:443|:8443'`
+### 2. Contenci贸n Inmediata
+1. Desactivar permisos de ejecuci葍硁 para mitigar persistencia:
+   chmod 000 /ruta/del/archivo/sospechoso.php
+2. Verificar conexiones de red activas originadas por el servicio web:
+   ss -tunap | grep -E ":80|:443|:8443"
 
-### 3. Erradicaci髇 y Recuperaci髇
-1. Mover el archivo comprometido a cuarentena aislada:
-   `mv /ruta/del/archivo/sospechoso.php /root/quarantine/`
-2. Analizar registros web para ubicar la IP de origen y vectores de inyecci髇.
-3. Restablecer el archivo leg韙imo desde copias de respaldo verificadas.
+### 3. Erradicaci贸n y Recuperaci贸n
+1. Mover el archivo comprometido a un directorio de cuarentena:
+   mv /ruta/del/archivo/sospechoso.php /root/quarantine/
+2. Analizar registros web para ubicar la IP de origen y vectores de inyecci贸n.
+3. Restablecer el archivo leg铆timo desde copias de respaldo verificadas.
